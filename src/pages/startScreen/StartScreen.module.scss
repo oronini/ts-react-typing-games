@@ -1,0 +1,42 @@
+@import '../../scss/mixin.scss';
+
+.root {
+  .contentWrap {
+    margin-top: 40px;
+    text-align: center;
+
+    h3 {
+      margin-top: 24px;
+      font-size: 2.4rem;
+    }
+
+    ul {
+      margin-top: 8px;
+      padding: 1em;
+      padding-left: 2em;
+      background-color: #eee;
+      border: 2px solid #333;
+      font-size: 2.4rem;
+      @include sp {
+        font-size: 1.6rem;
+      }
+
+      li {
+        text-align: left;
+        margin-top: 16px;
+
+        &:first-of-type {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .btnWrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+    }
+  }
+}

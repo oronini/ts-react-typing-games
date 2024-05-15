@@ -1,0 +1,29 @@
+.button {
+  width: 29rem;
+  margin: 16px;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  position: relative;
+  padding: 1rem 4rem;
+  font-weight: bold;
+  border-radius: 10px;
+  color: #333;
+  border: 3px solid #333;
+  box-shadow: 0 7px #333;
+  transition: 0.3s ease-in-out;
+  background-color: transparent;
+  font-size: 3rem;
+
+  &:hover,
+  &:focus {
+    box-shadow: none;
+    transform: translate(0, 7px);
+    color: #333;
+    outline: none;
+  }
+
+  span {
+    user-select: none;
+  }
+}

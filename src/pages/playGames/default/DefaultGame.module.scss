@@ -1,0 +1,56 @@
+@import '../../../scss/mixin.scss';
+
+.question {
+  font-size: 4rem;
+  font-weight: bold;
+  letter-spacing: 0.25em;
+  text-align: center;
+  user-select: none;
+
+  @include sp {
+    font-size: 2.4rem;
+  }
+
+  .marker {
+    background-color: #b0e3ff;
+  }
+}
+
+.blinkingText {
+  margin-top: 40px;
+  font-size: 3.2rem;
+  text-align: center;
+  color: #ff0000;
+  animation: blinking 1.5s ease-in-out infinite alternate;
+
+  @include sp {
+    font-size: 2rem;
+  }
+
+  @keyframes blinking {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+.typingInput {
+  width: 100%;
+  margin: 2rem auto;
+  padding: 1%;
+  font-size: 3.2rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+  border: none;
+  box-sizing: border-box;
+  &:focus {
+    outline: none;
+  }
+
+  @include sp {
+    font-size: 2rem;
+  }
+}

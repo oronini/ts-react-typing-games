@@ -1,0 +1,23 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 24px;
+  box-sizing: border-box;
+
+  .misTypeOverRay {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: #ff353584;
+  }
+
+  h2 {
+    font-size: 4rem;
+    user-select: none;
+  }
+}
