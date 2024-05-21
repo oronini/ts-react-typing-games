@@ -32,14 +32,14 @@ export const TypingGameProvider = ({ children }: Children) => {
   const formTypeTitle = '難読漢字';
 
   useEffect(() => {
-    const defaultGameData = collection(db, 'defultGameQuestion');
+    const defaultGameData = collection(db, 'defaultGameQuestion');
     getDocs(defaultGameData).then((snapShot) => {
       // console.log(snapShot.docs.map((doc) => doc.data().questions));
       const data = snapShot.docs.map((doc) => doc.data().questions);
       setDefaultQuestions(data[0]);
     });
 
-    const formGameData = collection(db, 'obj');
+    const formGameData = collection(db, 'difficultToReadKanji');
     getDocs(formGameData).then((snapShot) => {
       // console.log(snapShot.docs.map((doc) => doc.data()));
       const data = snapShot.docs.map((doc) => doc.data());
