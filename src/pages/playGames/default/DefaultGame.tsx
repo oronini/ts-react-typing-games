@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './DefaultGame.module.scss';
-import defaultQuestions from '../../../questions/defaultGameQuestion/defaultGameQuestion';
 import { UseTypingGameContext } from '../../../context/useTypingGame';
 
 const DefaultGame = () => {
@@ -11,7 +10,9 @@ const DefaultGame = () => {
     setMisTyped,
     setMisAction,
     setTime,
+    defaultQuestions,
   } = UseTypingGameContext();
+
   const [question, setQuestion] = useState<string[]>(defaultQuestions);
   const [currentKey, setCurrentKey] = useState<number>(
     Math.floor(Math.random() * question.length)

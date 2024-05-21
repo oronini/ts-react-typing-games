@@ -1,14 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import styles from './FormType.module.scss';
 import { formGameQuestion } from '../../../types/type';
-import questions from '../../../questions/formTypeGameQuestions/FormTypeGameQuestion';
 import { UseTypingGameContext } from '../../../context/useTypingGame';
 
 const FormTypeGame = () => {
-  const { setAnswerId, setScore, setClearFlg, setPlayGame, setMisAction } =
-    UseTypingGameContext();
+  const {
+    setAnswerId,
+    setScore,
+    setClearFlg,
+    setPlayGame,
+    setMisAction,
+    formTypeQuestions,
+  } = UseTypingGameContext();
   const [hiragana, setHiragana] = useState<string>('');
-  const [question, setQuestion] = useState<formGameQuestion[]>(questions);
+  const [question, setQuestion] = useState<formGameQuestion[]>(
+    formTypeQuestions.map((data) => ({
+      id: data.id,
+      display: data.display,
+      typingText: data.typingText,
+    }))
+  );
   const [currentKey, setCurrentKey] = useState<number>(
     Math.floor(Math.random() * question.length)
   );

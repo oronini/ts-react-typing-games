@@ -1,5 +1,7 @@
 // === context ===
 
+import { DocumentData } from 'firebase-admin/firestore';
+
 export type Children = {
   children: JSX.Element;
 };
@@ -33,6 +35,8 @@ export type Props = {
   setAnswerId: React.Dispatch<React.SetStateAction<number>>;
   defaultTitle: string;
   formTypeTitle: string;
+  defaultQuestions: string[];
+  formTypeQuestions: formGameQuestion[] | DocumentData[];
 };
 
 // === components ===

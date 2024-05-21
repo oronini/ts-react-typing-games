@@ -1,6 +1,5 @@
 import Button from '../../components/button/Button';
 import styles from './EndScreen.module.scss';
-import questions from '../../questions/formTypeGameQuestions/FormTypeGameQuestion';
 import { UseTypingGameContext } from '../../context/useTypingGame';
 import { useEffect } from 'react';
 
@@ -22,6 +21,7 @@ const EndScreen = () => {
     clearFlg,
     setClearFlg,
     answerId,
+    formTypeQuestions,
   } = UseTypingGameContext();
 
   const sameAction = () => {
@@ -82,7 +82,7 @@ const EndScreen = () => {
               ''
             ) : (
               <>
-                {questions.map((q) => {
+                {formTypeQuestions.map((q) => {
                   if (q.id === answerId) {
                     return (
                       <>
