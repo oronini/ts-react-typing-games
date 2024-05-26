@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './FormType.module.scss';
 import { formGameQuestion } from '../../../types/type';
 import { UseTypingGameContext } from '../../../context/useTypingGame';
+import ButtonWrap from '../../../components/buttonWrap/ButtonWrap';
 
 const FormTypeGame = () => {
   const {
@@ -115,6 +116,7 @@ const FormTypeGame = () => {
           onChange={handleInputChange}
         />
       </form>
+      <ButtonWrap />
     </div>
   );
 };

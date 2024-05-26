@@ -1,22 +1,9 @@
-import { useEffect } from 'react';
-import Button from '../../components/button/Button';
 import { UseTypingGameContext } from '../../context/useTypingGame';
 import styles from './StartScreen.module.scss';
+import ButtonWrap from '../../components/buttonWrap/ButtonWrap';
 
 const StartScreen = () => {
-  const { defaultPlay, setNotStarted, setCountScreen, setDisabled, disabled } =
-    UseTypingGameContext();
-
-  useEffect(() => {
-    setDisabled(false);
-    // eslint-disable-next-line
-  }, []);
-
-  const handleStartBtn = () => {
-    setNotStarted(false);
-    setCountScreen(true);
-    setDisabled(true);
-  };
+  const { defaultPlay } = UseTypingGameContext();
 
   return (
     <div className={styles.root}>
@@ -35,13 +22,7 @@ const StartScreen = () => {
             </>
           )}
         </ul>
-        <div className={styles.btnWrap}>
-          <Button
-            btnTitle="スタート"
-            btnFun={handleStartBtn}
-            disabled={disabled}
-          />
-        </div>
+        <ButtonWrap startScreen />
       </div>
     </div>
   );

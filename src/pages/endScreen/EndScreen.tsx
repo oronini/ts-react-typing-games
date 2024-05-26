@@ -1,48 +1,20 @@
-import Button from '../../components/button/Button';
+// import Button from '../../components/button/Button';
 import styles from './EndScreen.module.scss';
 import { UseTypingGameContext } from '../../context/useTypingGame';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
+import ButtonWrap from '../../components/buttonWrap/ButtonWrap';
+import Link from '../../components/link/Link';
 
 const EndScreen = () => {
   const {
-    disabled,
-    setDisabled,
-    setSelectScreen,
     defaultPlay,
-    setDefaultPlay,
-    setFormTypePlay,
-    setCountScreen,
     misTyped,
-    setMisTyped,
     time,
-    setTime,
     score,
-    setScore,
     clearFlg,
-    setClearFlg,
     answerId,
     formTypeQuestions,
   } = UseTypingGameContext();
-
-  const sameAction = () => {
-    setDisabled(true);
-    setMisTyped(0);
-    setClearFlg(false);
-    setScore(0);
-  };
-
-  const handleReStart = () => {
-    sameAction();
-    setCountScreen(true);
-  };
-
-  const handleSelect = () => {
-    sameAction();
-    setTime(0);
-    setSelectScreen(true);
-    setDefaultPlay(false);
-    setFormTypePlay(false);
-  };
 
   const mm = Math.floor(time / 60)
     .toString()
@@ -52,17 +24,11 @@ const EndScreen = () => {
     .toString()
     .padStart(2, '0');
 
-  useEffect(() => {
-    setDisabled(false);
-    // eslint-disable-next-line
-  }, []);
-
   return (
     <>
       <div className={styles.root}>
         {defaultPlay ? (
           <>
-            {/* default */}
             <div className={styles.clearTitle}>CLEAR</div>
             <div className={styles.score}>
               <div className={styles.clearTime}>クリアタイム</div>
@@ -73,7 +39,6 @@ const EndScreen = () => {
           </>
         ) : (
           <>
-            {/* formTypeGame */}
             <div className={styles.clearTitle}>
               {clearFlg ? 'GAME CLEAR' : 'GAME OVER'}
             </div>
@@ -106,18 +71,8 @@ const EndScreen = () => {
             </div>
           </>
         )}
-        <div className={styles.btnWrap}>
-          <Button
-            btnTitle="リトライ"
-            btnFun={handleReStart}
-            disabled={disabled}
-          />
-          <Button
-            btnTitle="ゲーム選択へ"
-            btnFun={handleSelect}
-            disabled={disabled}
-          />
-        </div>
+        <ButtonWrap />
+        <Link />
       </div>
     </>
   );

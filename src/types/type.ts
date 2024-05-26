@@ -49,6 +49,11 @@ export type propsButtonType = {
   disabled: boolean;
 };
 
+export type propsButtonWrap = {
+  selectGames?: boolean;
+  startScreen?: boolean;
+};
+
 // === questions ===
 // --- defaultGameQuestion ---
 export type defaultGameQuestion = string[];

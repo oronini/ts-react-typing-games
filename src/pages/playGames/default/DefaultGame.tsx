@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './DefaultGame.module.scss';
 import { UseTypingGameContext } from '../../../context/useTypingGame';
+import ButtonWrap from '../../../components/buttonWrap/ButtonWrap';
 
 const DefaultGame = () => {
   const {
@@ -104,6 +105,7 @@ const DefaultGame = () => {
         onChange={handleInputChange}
         ref={textArea}
       />
+      <ButtonWrap />
     </>
   );
 };

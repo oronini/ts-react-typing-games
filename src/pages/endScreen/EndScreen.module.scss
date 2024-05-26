@@ -45,11 +45,9 @@
     }
   }
 
-  .btnWrap {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
+  a {
+    display: block;
+    margin-top: 4rem;
+    font-size: 2rem;
   }
 }

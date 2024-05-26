@@ -4,17 +4,20 @@ import styles from './NoPcScreen.module.scss';
 import { UseTypingGameContext } from '../../context/useTypingGame';
 import Link from '../../components/link/Link';
 
-const toGameMode = () => {
-  console.log('click');
-};
-
 const NoPcScreen = () => {
-  const { disabled, setDisabled } = UseTypingGameContext();
+  const { disabled, setDisabled, setDeviceFlg } = UseTypingGameContext();
 
   useEffect(() => {
     setDisabled(false);
     // eslint-disable-next-line
   }, []);
+
+  const toGameMode = () => {
+    console.log('click');
+    setDisabled(true);
+    setDeviceFlg(true);
+  };
+
   return (
     <div className={styles.root}>
       <div>
