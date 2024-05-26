@@ -37,6 +37,8 @@ export type Props = {
   formTypeTitle: string;
   defaultQuestions: string[];
   formTypeQuestions: formGameQuestion[] | DocumentData[];
+  deviceFlg: boolean;
+  setDeviceFlg: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 // === components ===

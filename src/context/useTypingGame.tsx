@@ -11,6 +11,7 @@ export const UseTypingGameContext = () => {
 };
 
 export const TypingGameProvider = ({ children }: Children) => {
+  const [deviceFlg, setDeviceFlg] = useState<boolean>(true);
   const [formTypeQuestions, setFormTypeQuestions] = useState<
     formGameQuestion[] | DocumentData[]
   >([{}]);
@@ -34,14 +35,12 @@ export const TypingGameProvider = ({ children }: Children) => {
   useEffect(() => {
     const defaultGameData = collection(db, 'defaultGameQuestion');
     getDocs(defaultGameData).then((snapShot) => {
-      // console.log(snapShot.docs.map((doc) => doc.data().questions));
       const data = snapShot.docs.map((doc) => doc.data().questions);
       setDefaultQuestions(data[0]);
     });
 
     const formGameData = collection(db, 'difficultToReadKanji');
     getDocs(formGameData).then((snapShot) => {
-      // console.log(snapShot.docs.map((doc) => doc.data()));
       const data = snapShot.docs.map((doc) => doc.data());
       setFormTypeQuestions(data);
     });
@@ -78,6 +77,8 @@ export const TypingGameProvider = ({ children }: Children) => {
     formTypeTitle,
     defaultQuestions,
     formTypeQuestions,
+    deviceFlg,
+    setDeviceFlg,
   };
 
   return (

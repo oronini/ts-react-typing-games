@@ -2,6 +2,7 @@ import Button from '../../components/button/Button';
 import styles from './SelectGames.module.scss';
 import { UseTypingGameContext } from '../../context/useTypingGame';
 import { useEffect } from 'react';
+import Link from '../../components/link/Link';
 
 const SelectGames = () => {
   const {
@@ -54,6 +55,7 @@ const SelectGames = () => {
             disabled={disabled}
           />
         </div>
+        <Link />
       </div>
     </div>
   );
