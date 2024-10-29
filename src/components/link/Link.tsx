@@ -3,12 +3,12 @@ import styles from './Link.module.scss';
 const Link = () => {
   return (
     <a
-      href="#"
+      href="https://portfolio-nextjs-jet-five.vercel.app/"
       target="_blank"
       rel="noopener noreferrer"
       className={styles.link}
     >
-      サイトを見る
+      制作者のサイトを見る
     </a>
   );
 };
